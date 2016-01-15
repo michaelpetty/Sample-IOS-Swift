@@ -121,10 +121,50 @@ Call Group</string>
                             <outlet property="delegate" destination="VDi-Oa-e6K" id="SnQ-KO-tLd"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="iSq-Az-eVU" kind="showDetail" identifier="showDetail" id="AWy-HW-y0c"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tsg-bb-ncg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1510.5" y="384"/>
+            <point key="canvasLocation" x="1518" y="384"/>
+        </scene>
+        <!--Contact Detail View Controller-->
+        <scene sceneID="3et-8t-deY">
+            <objects>
+                <viewController id="G8z-ij-z7t" customClass="ContactDetailViewController" customModule="SampleIOSSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jus-i3-qCP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sjr-dD-dMC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s4b-SY-p0V">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bIL-yJ-MVS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SRv-dD-rLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1518" y="1179"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LmO-pv-v0v">
+            <objects>
+                <navigationController id="iSq-Az-eVU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3W6-JU-5sp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="G8z-ij-z7t" kind="relationship" relationship="rootViewController" id="NWb-OL-W4x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PpI-28-SB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="715" y="1179"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Udz-o4-jUZ">
