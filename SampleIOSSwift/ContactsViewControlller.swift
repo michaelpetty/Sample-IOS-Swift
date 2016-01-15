@@ -8,8 +8,9 @@
 
 import UIKit
 import Contacts
+import ContactsUI
 
-class ContactsViewController: UIViewController {
+class ContactsViewController: UITableViewController {
 
     //set to access CNContactStore, Contacts
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -17,6 +18,12 @@ class ContactsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        appDelegate.requestForAccess() { (accessGranted) -> Void in
+            if accessGranted {
+                print("Authorized for Contacts")
+            }
+    
+        }
     }
     
     override func didReceiveMemoryWarning() {
