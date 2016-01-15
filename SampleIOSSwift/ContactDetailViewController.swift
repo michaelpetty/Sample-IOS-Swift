@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ContactDetailViewController.swift
 //  SampleIOSSwift
 //
 //  Created by james petty on 1/7/16.
@@ -7,17 +7,51 @@
 //
 
 import UIKit
+import Contacts
 
 class ContactDetailViewController: UIViewController {
 
+    @IBOutlet weak var contactImgView: UIImageView!
+    @IBOutlet weak var contactNameLabel: UILabel!
+    @IBOutlet weak var contactPhLabel: UILabel!
+    
+    var contact: CNContact? {
+        didSet {
+            // Update the view.
+            self.configureView()
+        }
+    }
+    
+    func configureView() {
+        // Update the user interface for the contact item.
+        if let contact = self.contact {
+            if let label = self.contactNameLabel {
+                label.text = CNContactFormatter.stringFromContact(contact, style: .FullName)
+            }
+            
+            if let imageView = self.contactImgView {
+                if contact.imageData != nil {
+                    imageView.image = UIImage(data: contact.imageData!)
+                }
+                else {
+                    imageView.image = nil
+                }
+            }
+            
+            if let phoneNumberLabel = self.contactPhLabel {
+                var numberArray = [String]()
+                for number in contact.phoneNumbers {
+                    let phoneNumber = number.value as! CNPhoneNumber
+                    numberArray.append(phoneNumber.stringValue)
+                }
+                phoneNumberLabel.text = numberArray.joinWithSeparator(", ")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.configureView()
     }
 
 

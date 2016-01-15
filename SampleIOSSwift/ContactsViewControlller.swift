@@ -14,10 +14,17 @@ class ContactsViewController: UITableViewController {
     //set to access CNContactStore, Contacts
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var contacts = [CNContact]()
+    var contactDetailViewController: ContactDetailViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if let split = self.splitViewController {
+            let controllers = split.viewControllers
+            self.contactDetailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? ContactDetailViewController
+        }
+
         //TODO: move to a func
         appDelegate.requestForAccess() { (accessGranted) -> Void in
             if accessGranted {
@@ -57,6 +64,24 @@ class ContactsViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
+        super.viewWillAppear(animated)
+    }
+
+    // Segue to Contact Details
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let contact = contacts[indexPath.row] as CNContact
+                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! ContactDetailViewController
+                controller.contact = contact
+                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
     }
 
     // Table View
