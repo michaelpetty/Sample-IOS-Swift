@@ -95,15 +95,16 @@ Call Group</string>
             </objects>
             <point key="canvasLocation" x="712.5" y="384"/>
         </scene>
-        <!--View Controller-->
+        <!--Contacts View Controller-->
         <scene sceneID="oCB-Kn-5iI">
             <objects>
-                <viewController id="SMf-u6-Mrr" sceneMemberID="viewController">
+                <viewController id="SMf-u6-Mrr" customClass="ContactsViewController" customModule="SampleIOSSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rlf-sX-ASS"/>
                         <viewControllerLayoutGuide type="bottom" id="nyJ-3K-yhT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jAX-gR-uFf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSR-hS-Mil">
