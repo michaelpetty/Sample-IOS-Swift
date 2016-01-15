@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E51DC9621C4961B900A021C9 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51DC9611C4961B900A021C9 /* ContactDetailViewController.swift */; };
 		E5B761691C3F507B0036A470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B761681C3F507B0036A470 /* AppDelegate.swift */; };
 		E5B7616B1C3F507B0036A470 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7616A1C3F507B0036A470 /* ViewController.swift */; };
 		E5B7616E1C3F507B0036A470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5B7616C1C3F507B0036A470 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E51DC9611C4961B900A021C9 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		E5B761651C3F507B0036A470 /* SampleIOSSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleIOSSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B761681C3F507B0036A470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5B7616A1C3F507B0036A470 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				E5B761681C3F507B0036A470 /* AppDelegate.swift */,
 				E5B7616A1C3F507B0036A470 /* ViewController.swift */,
+				E51DC9611C4961B900A021C9 /* ContactDetailViewController.swift */,
 				E5B7616C1C3F507B0036A470 /* Main.storyboard */,
 				E5FEDBC21C481F9F00C6D435 /* ContactsViewControlller.swift */,
 				E5B7616F1C3F507B0036A470 /* Assets.xcassets */,
@@ -261,6 +264,7 @@
 			files = (
 				E5B7616B1C3F507B0036A470 /* ViewController.swift in Sources */,
 				E5B761691C3F507B0036A470 /* AppDelegate.swift in Sources */,
+				E51DC9621C4961B900A021C9 /* ContactDetailViewController.swift in Sources */,
 				E5FEDBC31C481F9F00C6D435 /* ContactsViewControlller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

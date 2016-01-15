@@ -8,7 +8,6 @@
 
 import UIKit
 import Contacts
-import ContactsUI
 
 class ContactsViewController: UITableViewController {
 
@@ -19,6 +18,7 @@ class ContactsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //TODO: move to a func
         appDelegate.requestForAccess() { (accessGranted) -> Void in
             if accessGranted {
                 let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey]
