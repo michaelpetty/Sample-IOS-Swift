@@ -28,7 +28,9 @@ class ContactsViewController: UITableViewController {
         //TODO: move to a func
         appDelegate.requestForAccess() { (accessGranted) -> Void in
             if accessGranted {
-                let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey]
+                let keys = [CNContactFormatter.descriptorForRequiredKeysForStyle(.FullName),
+                    CNContactImageDataKey,
+                    CNContactPhoneNumbersKey]
                 let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
                 //var contacts = [CNContact]()
                 var message: String!

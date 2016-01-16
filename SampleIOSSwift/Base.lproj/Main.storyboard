@@ -5,100 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--Clever App Name-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleIOSSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clever App Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHd-Qj-pou">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="133" y="28" width="134" height="21"/>
-                                </variation>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gde-PY-9UK">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Make a Call"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="161" y="121" width="79" height="30"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tpu-D7-OXE">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal">
-                                    <string key="title">Create/Edit
-Call Group</string>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="161" y="204" width="77" height="30"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwd-00-jxV">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="View Contacts"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="151" y="285" width="99" height="30"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="VDi-Oa-e6K" kind="show" id="7in-db-Gel"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esc-FO-gTd">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Settings"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="171" y="381" width="57" height="30"/>
-                                </variation>
-                            </button>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="HHd-Qj-pou"/>
-                                <exclude reference="gde-PY-9UK"/>
-                                <exclude reference="tpu-D7-OXE"/>
-                                <exclude reference="Uwd-00-jxV"/>
-                                <exclude reference="Esc-FO-gTd"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="HHd-Qj-pou"/>
-                                <include reference="gde-PY-9UK"/>
-                                <include reference="tpu-D7-OXE"/>
-                                <include reference="Uwd-00-jxV"/>
-                                <include reference="Esc-FO-gTd"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" title="Clever App Name" id="06o-yh-nQC">
-                        <barButtonItem key="backBarButtonItem" title="app home" id="GBz-Mk-Rib"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="712.5" y="384"/>
-        </scene>
-        <!--Contacts View Controller-->
+        <!--Master-->
         <scene sceneID="Fv3-n9-UuR">
             <objects>
-                <tableViewController id="VDi-Oa-e6K" customClass="ContactsViewController" customModule="SampleIOSSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="VDi-Oa-e6K" customClass="ContactsViewController" customModule="SampleIOSSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PBW-Fb-uoW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,9 +21,21 @@ Call Group</string>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JsF-c7-9Qw" id="v3y-uF-WE9">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SB9-hQ-3Nl">
+                                            <rect key="frame" x="14" y="8" width="43" height="24"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="iSq-Az-eVU" kind="showDetail" identifier="showDetail" id="9VK-eH-DVa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -121,18 +43,16 @@ Call Group</string>
                             <outlet property="delegate" destination="VDi-Oa-e6K" id="SnQ-KO-tLd"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <segue destination="iSq-Az-eVU" kind="showDetail" identifier="showDetail" id="AWy-HW-y0c"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="HCh-Oi-IYH"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tsg-bb-ncg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1518" y="384"/>
+            <point key="canvasLocation" x="574" y="464"/>
         </scene>
-        <!--Contact Detail View Controller-->
+        <!--Detail-->
         <scene sceneID="3et-8t-deY">
             <objects>
-                <viewController id="G8z-ij-z7t" customClass="ContactDetailViewController" customModule="SampleIOSSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="G8z-ij-z7t" customClass="ContactDetailViewController" customModule="SampleIOSSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jus-i3-qCP"/>
                         <viewControllerLayoutGuide type="bottom" id="Sjr-dD-dMC"/>
@@ -149,14 +69,14 @@ Call Group</string>
                                 <rect key="frame" x="178" y="91" width="0.0" height="0.0"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIf-eP-mRA">
                                 <rect key="frame" x="178" y="139" width="0.0" height="0.0"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -172,20 +92,20 @@ Call Group</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRv-dD-rLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1518" y="1179"/>
+            <point key="canvasLocation" x="574" y="1259"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="9m5-Ea-Yix">
             <objects>
                 <splitViewController id="g4S-4Q-cO0" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="bwa-Xr-XJZ" kind="relationship" relationship="masterViewController" id="RJl-QL-3db"/>
                         <segue destination="iSq-Az-eVU" kind="relationship" relationship="detailViewController" id="9wV-Mf-Ci5"/>
+                        <segue destination="bwa-Xr-XJZ" kind="relationship" relationship="masterViewController" id="73X-Sf-tzR"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gh-NN-EwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1087" y="715"/>
+            <point key="canvasLocation" x="-2031" y="795"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LmO-pv-v0v">
@@ -202,12 +122,12 @@ Call Group</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PpI-28-SB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="715" y="1179"/>
+            <point key="canvasLocation" x="-229" y="1259"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Master-->
         <scene sceneID="Udz-o4-jUZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bwa-Xr-XJZ" sceneMemberID="viewController">
+                <navigationController title="Master" automaticallyAdjustsScrollViewInsets="NO" id="bwa-Xr-XJZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hvx-dw-PCj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -216,15 +136,15 @@ Call Group</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QwU-7Q-8tS"/>
+                        <segue destination="VDi-Oa-e6K" kind="relationship" relationship="rootViewController" id="vW0-Mc-FU0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLN-h8-dxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-76.5" y="384"/>
+            <point key="canvasLocation" x="-1021" y="464"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9wV-Mf-Ci5"/>
+        <segue reference="9VK-eH-DVa"/>
     </inferredMetricsTieBreakers>
 </document>
