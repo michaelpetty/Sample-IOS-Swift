@@ -50,7 +50,7 @@ class ContactDetailViewController: UIViewController {
                     let phoneNumber = number.value as! CNPhoneNumber
                     numberArray.append(phoneNumber.stringValue)
                 }
-                phoneNumberLabel.text = numberArray.joinWithSeparator(", ")
+                phoneNumberLabel.text = numberArray.joinWithSeparator("\n")
                 print(phoneNumberLabel.text)
             }
         }
