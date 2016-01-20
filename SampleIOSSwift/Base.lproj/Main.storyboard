@@ -62,29 +62,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l2w-vP-2iu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l2w-vP-2iu">
                                 <rect key="frame" x="0.0" y="64" width="128" height="128"/>
                                 <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49L-xh-KgC">
-                                <rect key="frame" x="178" y="91" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49L-xh-KgC">
+                                <rect key="frame" x="163" y="91" width="417" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="163" y="91" width="217" height="30"/>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIf-eP-mRA">
-                                <rect key="frame" x="178" y="139" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIf-eP-mRA">
+                                <rect key="frame" x="163" y="139" width="417" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="163" y="139" width="217" height="30"/>
+                                </variation>
                             </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DIf-eP-mRA" firstAttribute="top" secondItem="49L-xh-KgC" secondAttribute="bottom" constant="18" id="4wk-O0-PCK"/>
+                            <constraint firstItem="49L-xh-KgC" firstAttribute="leading" secondItem="l2w-vP-2iu" secondAttribute="trailing" constant="35" id="uEs-Iy-biB"/>
+                            <constraint firstItem="DIf-eP-mRA" firstAttribute="leading" secondItem="l2w-vP-2iu" secondAttribute="trailing" constant="35" id="zFa-WY-rNh"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bIL-yJ-MVS"/>
+                    <navigationItem key="navigationItem" title="Contact Detail" id="bIL-yJ-MVS"/>
                     <connections>
                         <outlet property="contactImgView" destination="l2w-vP-2iu" id="xBG-Sg-qgs"/>
                         <outlet property="contactNameLabel" destination="49L-xh-KgC" id="xP9-mB-k15"/>
@@ -93,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRv-dD-rLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="574" y="1259"/>
+            <point key="canvasLocation" x="573" y="1259"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="9m5-Ea-Yix">

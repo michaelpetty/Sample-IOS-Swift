@@ -17,6 +17,7 @@ class ContactDetailViewController: UIViewController {
     
     var contact: CNContact? {
         didSet {
+            print("didSet")
             // Update the view.
             self.configureView()
         }
@@ -25,15 +26,20 @@ class ContactDetailViewController: UIViewController {
     func configureView() {
         // Update the user interface for the contact item.
         if let contact = self.contact {
+            if (contact != "") {print("we have contact")}
             if let label = self.contactNameLabel {
                 label.text = CNContactFormatter.stringFromContact(contact, style: .FullName)
+                print(label.text)
+
             }
             
             if let imageView = self.contactImgView {
                 if contact.imageData != nil {
+                    print("we have imageData")
                     imageView.image = UIImage(data: contact.imageData!)
                 }
                 else {
+                    print("no imageData in contact")
                     imageView.image = nil
                 }
             }
@@ -45,11 +51,13 @@ class ContactDetailViewController: UIViewController {
                     numberArray.append(phoneNumber.stringValue)
                 }
                 phoneNumberLabel.text = numberArray.joinWithSeparator(", ")
+                print(phoneNumberLabel.text)
             }
         }
     }
     
     override func viewDidLoad() {
+        print("viewdidload")
         super.viewDidLoad()
         self.configureView()
     }
