@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -87,12 +88,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVr-Sf-qHS">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="136" y="72" width="244" height="30"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeA-1X-6yp">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -100,32 +98,60 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="136" y="117" width="244" height="67"/>
-                                </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4P4-p9-bIb">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="4153123292"/>
+                                <connections>
+                                    <action selector="placeCall:" destination="G8z-ij-z7t" eventType="touchUpInside" id="tdY-pw-h48"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="l2w-vP-2iu" firstAttribute="top" secondItem="jus-i3-qCP" secondAttribute="bottom" id="KJo-Ai-MGK"/>
+                            <constraint firstItem="DeA-1X-6yp" firstAttribute="top" secondItem="OVr-Sf-qHS" secondAttribute="bottom" constant="15" id="CP5-oe-ZAm"/>
+                            <constraint firstItem="l2w-vP-2iu" firstAttribute="top" secondItem="jus-i3-qCP" secondAttribute="bottom" constant="8" id="KJo-Ai-MGK"/>
+                            <constraint firstItem="DeA-1X-6yp" firstAttribute="leading" secondItem="l2w-vP-2iu" secondAttribute="trailing" constant="8" id="Ouc-qI-BkE"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="l2w-vP-2iu" secondAttribute="leading" id="QBd-q8-i9O"/>
+                            <constraint firstItem="OVr-Sf-qHS" firstAttribute="top" secondItem="jus-i3-qCP" secondAttribute="bottom" constant="8" id="Uak-2q-uBp"/>
+                            <constraint firstItem="4P4-p9-bIb" firstAttribute="top" secondItem="l2w-vP-2iu" secondAttribute="bottom" constant="49" id="oFd-qe-Xae"/>
+                            <constraint firstItem="OVr-Sf-qHS" firstAttribute="leading" secondItem="l2w-vP-2iu" secondAttribute="trailing" constant="8" id="rb8-gj-dgC"/>
+                            <constraint firstItem="4P4-p9-bIb" firstAttribute="leading" secondItem="s4b-SY-p0V" secondAttribute="leadingMargin" constant="21" id="ybD-yr-dIs"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="OVr-Sf-qHS"/>
                                 <exclude reference="DeA-1X-6yp"/>
+                                <exclude reference="4P4-p9-bIb"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="KJo-Ai-MGK"/>
+                                <exclude reference="QBd-q8-i9O"/>
+                                <exclude reference="Uak-2q-uBp"/>
+                                <exclude reference="rb8-gj-dgC"/>
+                                <exclude reference="CP5-oe-ZAm"/>
+                                <exclude reference="Ouc-qI-BkE"/>
+                                <exclude reference="oFd-qe-Xae"/>
+                                <exclude reference="ybD-yr-dIs"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="OVr-Sf-qHS"/>
                                 <include reference="DeA-1X-6yp"/>
+                                <include reference="4P4-p9-bIb"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="KJo-Ai-MGK"/>
+                                <include reference="QBd-q8-i9O"/>
+                                <include reference="Uak-2q-uBp"/>
+                                <include reference="rb8-gj-dgC"/>
+                                <include reference="CP5-oe-ZAm"/>
+                                <include reference="Ouc-qI-BkE"/>
+                                <include reference="oFd-qe-Xae"/>
+                                <include reference="ybD-yr-dIs"/>
                             </mask>
                         </variation>
                     </view>

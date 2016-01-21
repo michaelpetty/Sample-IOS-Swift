@@ -52,6 +52,19 @@ class ContactDetailViewController: UIViewController {
         }
     }
     
+    private func callNumber(phoneNumber:String) {
+        if let phoneCallURL:NSURL = NSURL(string:"telprompt://\(phoneNumber)") {
+            let application:UIApplication = UIApplication.sharedApplication()
+            if (application.canOpenURL(phoneCallURL)) {
+                application.openURL(phoneCallURL);
+            }
+        }
+    }
+    
+    @IBAction func placeCall(sender: UIButton) {
+        print(sender.titleLabel!.text)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
