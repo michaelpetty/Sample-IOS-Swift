@@ -14,7 +14,8 @@ class ContactDetailViewController: UIViewController {
     @IBOutlet weak var contactImgView: UIImageView!
     @IBOutlet weak var contactNameLabel: UILabel!
     @IBOutlet weak var contactPhLabel: UILabel!
-    
+    @IBOutlet weak var contactDefaultImg: UIImageView!
+
     var contact: CNContact? {
         didSet {
             self.configureView()
@@ -34,7 +35,8 @@ class ContactDetailViewController: UIViewController {
                     imageView.image = UIImage(data: contact.imageData!)
                 }
                 else {
-                    imageView.image = nil
+                    //imageView.image = contactDefaultImg.image
+                    imageView.image = textToImage("IN", inImage: contactDefaultImg.image!, atPoint: CGPointMake(20, 20))
                 }
             }
             
@@ -50,6 +52,28 @@ class ContactDetailViewController: UIViewController {
                 phoneNumberLabel.text = numberArray.joinWithSeparator("\n")
             }
         }
+    }
+    
+    func textToImage(drawText: NSString, inImage: UIImage, atPoint:CGPoint)->UIImage{
+        let textColor: UIColor = UIColor.whiteColor()
+        let textFont: UIFont = UIFont(name: "Helvetica Bold", size: 12)!
+        
+        UIGraphicsBeginImageContext(inImage.size)
+        let textFontAttributes = [
+            NSFontAttributeName: textFont,
+            NSForegroundColorAttributeName: textColor,
+        ]
+        
+        //Put the image into a rectangle as large as the original image.
+        inImage.drawInRect(CGRectMake(0, 0, inImage.size.width, inImage.size.height))
+        
+        // Creating a point within the space that is as bit as the image.
+        let rect: CGRect = CGRectMake(atPoint.x, atPoint.y, inImage.size.width, inImage.size.height)
+        drawText.drawInRect(rect, withAttributes: textFontAttributes)
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        return newImage
     }
     
     private func callNumber(phoneNumber:String) {
@@ -69,10 +93,11 @@ class ContactDetailViewController: UIViewController {
         super.viewDidLoad()
         self.configureView()
         let button   = UIButton(type: UIButtonType.System) as UIButton
-        button.frame = CGRectMake(156, 110, 46, 30)
+        button.frame = CGRectMake(14, 250, 200, 30)
         button.layer.cornerRadius = 14
         button.contentMode = UIViewContentMode.ScaleToFill
         button.backgroundColor = UIColor.greenColor()
+        button.userInteractionEnabled = true
         button.setTitle("415-312-3292", forState: UIControlState.Normal)
         button.addTarget(self, action: "placeCall:", forControlEvents: UIControlEvents.TouchUpInside)
         

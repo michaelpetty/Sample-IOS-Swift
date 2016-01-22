@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -68,7 +67,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l2w-vP-2iu">
                                 <rect key="frame" x="0.0" y="64" width="128" height="128"/>
                                 <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="l2w-vP-2iu" secondAttribute="height" multiplier="1:1" id="AVq-vg-khB"/>
                                     <constraint firstAttribute="width" constant="128" id="Ncv-Y9-YAu"/>
@@ -93,21 +91,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeA-1X-6yp">
+                            <label opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeA-1X-6yp">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4P4-p9-bIb">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ContactDefaultImg" translatesAutoresizingMaskIntoConstraints="NO" id="kqw-at-7UJ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
-                                <state key="normal" title="4153123292"/>
-                                <connections>
-                                    <action selector="placeCall:" destination="G8z-ij-z7t" eventType="touchUpInside" id="tdY-pw-h48"/>
-                                </connections>
-                            </button>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="72" width="128" height="128"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -117,19 +114,15 @@
                             <constraint firstItem="DeA-1X-6yp" firstAttribute="leading" secondItem="l2w-vP-2iu" secondAttribute="trailing" constant="8" id="Ouc-qI-BkE"/>
                             <constraint firstAttribute="leadingMargin" secondItem="l2w-vP-2iu" secondAttribute="leading" id="QBd-q8-i9O"/>
                             <constraint firstItem="OVr-Sf-qHS" firstAttribute="top" secondItem="jus-i3-qCP" secondAttribute="bottom" constant="8" id="Uak-2q-uBp"/>
-                            <constraint firstItem="4P4-p9-bIb" firstAttribute="top" secondItem="l2w-vP-2iu" secondAttribute="bottom" constant="49" id="oFd-qe-Xae"/>
                             <constraint firstItem="OVr-Sf-qHS" firstAttribute="leading" secondItem="l2w-vP-2iu" secondAttribute="trailing" constant="8" id="rb8-gj-dgC"/>
-                            <constraint firstItem="4P4-p9-bIb" firstAttribute="leading" secondItem="s4b-SY-p0V" secondAttribute="leadingMargin" constant="21" id="ybD-yr-dIs"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="OVr-Sf-qHS"/>
                                 <exclude reference="DeA-1X-6yp"/>
-                                <exclude reference="4P4-p9-bIb"/>
+                                <exclude reference="kqw-at-7UJ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="oFd-qe-Xae"/>
-                                <exclude reference="ybD-yr-dIs"/>
                                 <exclude reference="CP5-oe-ZAm"/>
                                 <exclude reference="Ouc-qI-BkE"/>
                                 <exclude reference="Uak-2q-uBp"/>
@@ -142,11 +135,9 @@
                             <mask key="subviews">
                                 <include reference="OVr-Sf-qHS"/>
                                 <include reference="DeA-1X-6yp"/>
-                                <include reference="4P4-p9-bIb"/>
+                                <include reference="kqw-at-7UJ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="oFd-qe-Xae"/>
-                                <include reference="ybD-yr-dIs"/>
                                 <include reference="CP5-oe-ZAm"/>
                                 <include reference="Ouc-qI-BkE"/>
                                 <include reference="Uak-2q-uBp"/>
@@ -158,6 +149,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Contact Detail" id="bIL-yJ-MVS"/>
                     <connections>
+                        <outlet property="contactDefaultImg" destination="kqw-at-7UJ" id="td1-os-buK"/>
                         <outlet property="contactImgView" destination="l2w-vP-2iu" id="xBG-Sg-qgs"/>
                         <outlet property="contactNameLabel" destination="OVr-Sf-qHS" id="P19-qO-aDx"/>
                         <outlet property="contactPhLabel" destination="DeA-1X-6yp" id="l3q-J7-4hh"/>
@@ -217,6 +209,9 @@
             <point key="canvasLocation" x="-1021" y="464"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ContactDefaultImg" width="128" height="128"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9VK-eH-DVa"/>
     </inferredMetricsTieBreakers>
