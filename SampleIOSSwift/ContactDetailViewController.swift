@@ -68,7 +68,17 @@ class ContactDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
+        let button   = UIButton(type: UIButtonType.System) as UIButton
+        button.frame = CGRectMake(156, 110, 46, 30)
+        button.layer.cornerRadius = 14
+        button.contentMode = UIViewContentMode.ScaleToFill
+        button.backgroundColor = UIColor.greenColor()
+        button.setTitle("415-312-3292", forState: UIControlState.Normal)
+        button.addTarget(self, action: "placeCall:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.view.addSubview(button)
     }
+    
 
 
 }

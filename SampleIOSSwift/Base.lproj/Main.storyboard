@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -127,14 +128,14 @@
                                 <exclude reference="4P4-p9-bIb"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="KJo-Ai-MGK"/>
-                                <exclude reference="QBd-q8-i9O"/>
-                                <exclude reference="Uak-2q-uBp"/>
-                                <exclude reference="rb8-gj-dgC"/>
-                                <exclude reference="CP5-oe-ZAm"/>
-                                <exclude reference="Ouc-qI-BkE"/>
                                 <exclude reference="oFd-qe-Xae"/>
                                 <exclude reference="ybD-yr-dIs"/>
+                                <exclude reference="CP5-oe-ZAm"/>
+                                <exclude reference="Ouc-qI-BkE"/>
+                                <exclude reference="Uak-2q-uBp"/>
+                                <exclude reference="rb8-gj-dgC"/>
+                                <exclude reference="KJo-Ai-MGK"/>
+                                <exclude reference="QBd-q8-i9O"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -144,14 +145,14 @@
                                 <include reference="4P4-p9-bIb"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="KJo-Ai-MGK"/>
-                                <include reference="QBd-q8-i9O"/>
-                                <include reference="Uak-2q-uBp"/>
-                                <include reference="rb8-gj-dgC"/>
-                                <include reference="CP5-oe-ZAm"/>
-                                <include reference="Ouc-qI-BkE"/>
                                 <include reference="oFd-qe-Xae"/>
                                 <include reference="ybD-yr-dIs"/>
+                                <include reference="CP5-oe-ZAm"/>
+                                <include reference="Ouc-qI-BkE"/>
+                                <include reference="Uak-2q-uBp"/>
+                                <include reference="rb8-gj-dgC"/>
+                                <include reference="KJo-Ai-MGK"/>
+                                <include reference="QBd-q8-i9O"/>
                             </mask>
                         </variation>
                     </view>
