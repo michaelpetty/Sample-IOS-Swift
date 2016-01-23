@@ -46,13 +46,16 @@ class ContactDetailViewController: UIViewController {
             
             if let phoneNumberLabel = self.contactPhLabel {
                 var numberArray = [String]()
+                var loopInt = 0
                 for number in contact.phoneNumbers {
                     let phoneNumber = number.value as! CNPhoneNumber
                     var labelInit: String!
                     let phoneNumLabel = CNLabeledValue.localizedStringForLabel(number.label)
                     labelInit = " (\(phoneNumLabel[phoneNumLabel.startIndex]))"
                     numberArray.append(phoneNumber.stringValue + "\(labelInit)")
-                    createCallButton(number)
+                    
+                    createCallButton(number, buttonInt: loopInt)
+                    loopInt++
                 }
                 phoneNumberLabel.text = numberArray.joinWithSeparator("\n")
             }
@@ -81,26 +84,42 @@ class ContactDetailViewController: UIViewController {
         return newImage
     }
     
-    private func callNumber(phoneNumber:String) {
-        if let phoneCallURL:NSURL = NSURL(string:"telprompt://\(phoneNumber)") {
-            let application:UIApplication = UIApplication.sharedApplication()
-            if (application.canOpenURL(phoneCallURL)) {
-                application.openURL(phoneCallURL);
+    @IBAction func callNumber(sender: UIButton) {
+        let phoneNum: String! = sender.titleLabel?.text
+        let phonePattern: String = "\\D*"
+        let range = NSMakeRange(0, phoneNum.characters.count)
+        let regExpOpt: NSRegularExpressionOptions = NSRegularExpressionOptions.CaseInsensitive
+
+        do {
+            let regex = try NSRegularExpression(pattern: phonePattern, options: regExpOpt)
+            let afterText: String = regex.stringByReplacingMatchesInString(phoneNum, options: NSMatchingOptions(rawValue: 0), range: range, withTemplate: "")
+            if let phoneCallURL:NSURL = NSURL(string:"telprompt://\(afterText)") {
+                let application:UIApplication = UIApplication.sharedApplication()
+                if (application.canOpenURL(phoneCallURL)) {
+                    application.openURL(phoneCallURL);
+                }
             }
+
+        } catch {
+            print("error in setting regex options")
         }
     }
+
+        
     
-    func createCallButton(number: CNLabeledValue) {
+    func createCallButton(number: CNLabeledValue, buttonInt: Int) {
         let phoneNumber = number.value as! CNPhoneNumber
 //        let phoneNumLabel = CNLabeledValue.localizedStringForLabel(number.label)
         let button   = UIButton(type: UIButtonType.System) as UIButton
-        button.frame = CGRectMake(14, 250, 200, 30)
+        //let buttonFl:CGFloat = CGFloat.init(buttonInt)
+        button.frame = CGRectMake(14, (250+(CGFloat.init(buttonInt)*32)), 200, 24)
         button.layer.cornerRadius = 14
         button.contentMode = UIViewContentMode.ScaleToFill
         button.backgroundColor = UIColor.greenColor()
         button.userInteractionEnabled = true
         button.setTitle("\(phoneNumber.stringValue)", forState: UIControlState.Normal)
-        button.addTarget(self, action: "placeCall:", forControlEvents: UIControlEvents.TouchUpInside)
+        //button.addTarget(self, action: "placeCall:", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: "callNumber:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(button)
         }
     
