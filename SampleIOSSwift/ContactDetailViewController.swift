@@ -36,7 +36,11 @@ class ContactDetailViewController: UIViewController {
                 }
                 else {
                     //imageView.image = contactDefaultImg.image
-                    imageView.image = textToImage("IN", inImage: contactDefaultImg.image!, atPoint: CGPointMake(20, 20))
+                    var contactInits: String!
+                    let firstName = contact.givenName
+                    let lastName = contact.familyName
+                    contactInits = "\(firstName[firstName.startIndex])\(lastName[lastName.startIndex])"
+                    imageView.image = textToImage("\(contactInits)", inImage: contactDefaultImg.image!, atPoint: CGPointMake(30, 37))
                 }
             }
             
@@ -48,6 +52,7 @@ class ContactDetailViewController: UIViewController {
                     let phoneNumLabel = CNLabeledValue.localizedStringForLabel(number.label)
                     labelInit = " (\(phoneNumLabel[phoneNumLabel.startIndex]))"
                     numberArray.append(phoneNumber.stringValue + "\(labelInit)")
+                    createCallButton(number)
                 }
                 phoneNumberLabel.text = numberArray.joinWithSeparator("\n")
             }
@@ -56,7 +61,7 @@ class ContactDetailViewController: UIViewController {
     
     func textToImage(drawText: NSString, inImage: UIImage, atPoint:CGPoint)->UIImage{
         let textColor: UIColor = UIColor.whiteColor()
-        let textFont: UIFont = UIFont(name: "Helvetica Bold", size: 12)!
+        let textFont: UIFont = UIFont(name: "Helvetica Bold", size: 48)!
         
         UIGraphicsBeginImageContext(inImage.size)
         let textFontAttributes = [
@@ -85,6 +90,20 @@ class ContactDetailViewController: UIViewController {
         }
     }
     
+    func createCallButton(number: CNLabeledValue) {
+        let phoneNumber = number.value as! CNPhoneNumber
+//        let phoneNumLabel = CNLabeledValue.localizedStringForLabel(number.label)
+        let button   = UIButton(type: UIButtonType.System) as UIButton
+        button.frame = CGRectMake(14, 250, 200, 30)
+        button.layer.cornerRadius = 14
+        button.contentMode = UIViewContentMode.ScaleToFill
+        button.backgroundColor = UIColor.greenColor()
+        button.userInteractionEnabled = true
+        button.setTitle("\(phoneNumber.stringValue)", forState: UIControlState.Normal)
+        button.addTarget(self, action: "placeCall:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(button)
+        }
+    
     @IBAction func placeCall(sender: UIButton) {
         print(sender.titleLabel!.text)
     }
@@ -92,19 +111,7 @@ class ContactDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
-        let button   = UIButton(type: UIButtonType.System) as UIButton
-        button.frame = CGRectMake(14, 250, 200, 30)
-        button.layer.cornerRadius = 14
-        button.contentMode = UIViewContentMode.ScaleToFill
-        button.backgroundColor = UIColor.greenColor()
-        button.userInteractionEnabled = true
-        button.setTitle("415-312-3292", forState: UIControlState.Normal)
-        button.addTarget(self, action: "placeCall:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        self.view.addSubview(button)
     }
     
-
-
 }
 
