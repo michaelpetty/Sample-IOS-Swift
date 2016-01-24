@@ -93,7 +93,8 @@ class ContactDetailViewController: UIViewController {
         do {
             let regex = try NSRegularExpression(pattern: phonePattern, options: regExpOpt)
             let afterText: String = regex.stringByReplacingMatchesInString(phoneNum, options: NSMatchingOptions(rawValue: 0), range: range, withTemplate: "")
-            if let phoneCallURL:NSURL = NSURL(string:"telprompt://\(afterText)") {
+//            if let phoneCallURL:NSURL = NSURL(string:"telprompt://\(afterText)") {
+            if let phoneCallURL:NSURL = NSURL(string:"tel://\(afterText)") {
                 let application:UIApplication = UIApplication.sharedApplication()
                 if (application.canOpenURL(phoneCallURL)) {
                     application.openURL(phoneCallURL);
